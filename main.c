@@ -6,7 +6,7 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 12:57:23 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/20 15:21:23 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/20 18:08:16 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ int	main(int argc, char **argv)
 		ft_printf("%s", "Error\n");
 		return (-1);
 	}
-	if (!init_stack_data(stack, argv))
+	if (!load_stack_from_input(stack, argv))
 	{
-		write(2, "Error\n", 7);
+		ft_printf("%s", "Error\n");
 		return (-1);
 	}
 	if (!is_sorted(stack->stack_a, stack->size_stacks))

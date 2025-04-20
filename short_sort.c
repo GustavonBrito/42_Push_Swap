@@ -6,7 +6,7 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 12:57:42 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/20 13:57:40 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/20 18:13:21 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ void	short_sort(t_stack *stack)
 	if (stack->size_stacks == 2)
 		ra(stack);
 	if (stack->size_stacks == 3)
-		short_three(stack);
+		sort_three(stack);
 	if (stack->size_stacks == 4)
-		short_four(stack);
+		sort_four(stack);
 	if (stack->size_stacks == 5)
-		short_five(stack);
+		sort_five(stack);
 }

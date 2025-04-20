@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   stack_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/20 12:57:18 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/20 14:58:01 by gustavo-lin      ###   ########.fr       */
+/*   Created: 2025/04/20 18:36:21 by gustavo-lin       #+#    #+#             */
+/*   Updated: 2025/04/20 18:36:23 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	argv_size_calculate(char **argv)
+int	count_argv_elements(char **argv)
 {
 	int		i;
 	int		j;
@@ -23,7 +23,7 @@ int	argv_size_calculate(char **argv)
 	count = 0;
 	while (argv[++i])
 	{
-		if (have_space(argv[i]))
+		if (is_space_present(argv[i]))
 		{
 			temp = ft_split(argv[i], 32);
 			j = -1;
@@ -40,7 +40,7 @@ int	argv_size_calculate(char **argv)
 	return (count);
 }
 
-int	have_space(char *arguman)
+int	is_space_present(char *arguman)
 {
 	int	i;
 
@@ -53,9 +53,9 @@ int	have_space(char *arguman)
 	return (0);
 }
 
-int	init_stack_data(t_stack *stack, char **argv)
+int	load_stack_from_input(t_stack *stack, char **argv)
 {
-	stack->size_stacks = argv_size_calculate(argv);
+	stack->size_stacks = count_argv_elements(argv);
 	stack->stack_a = ft_calloc(stack->size_stacks + 1, sizeof(int));
 	if (!stack->stack_a)
 		return (0);
@@ -72,14 +72,14 @@ int	init_stack_data(t_stack *stack, char **argv)
 	ft_double_sign(argv, stack);
 	ft_chracter_check(argv, stack);
 	if (stack->error_state == 1)
-		return (0);
+		return (free(stack->stack_b), free(stack->stack_a), free(stack), 0);
 	if (check_doubles(stack))
-		return (0);
-	init_index(stack);
+		return (free(stack->stack_b), free(stack->stack_a), free(stack), 0);
+	initialize_stack_index(stack);
 	return (1);
 }
 
-void	init_index(t_stack *stack)
+void	initialize_stack_index(t_stack *stack)
 {
 	int	i;
 	int	j;
@@ -104,7 +104,7 @@ void	init_index(t_stack *stack)
 			}
 		}
 	}
-	ft_bzero(stack, stack->size_stacks);
+	ft_bzero_utils(stack, stack->size_stacks);
 }
 
 void	init_space_arg(t_stack *stack, char **argv)
@@ -120,18 +120,18 @@ void	init_space_arg(t_stack *stack, char **argv)
 	{
 		if (ft_strlen(argv[i]) == 0 || argv[i] == NULL)
 			stack->error_state = 1;
-		if (have_space(argv[i]))
+		if (is_space_present(argv[i]))
 		{
 			temp = ft_split(argv[i], 32);
 			j = -1;
 			while (temp[++j])
 			{
-				stack->stack_a[stack_index] = ft_atoi(temp[j], stack);
+				stack->stack_a[stack_index] = ft_atol(temp[j], stack);
 				stack_index++;
 			}
 			ft_free_temp(temp);
 		}
 		else
-			stack->stack_a[stack_index++] = ft_atoi(argv[i], stack);
+			stack->stack_a[stack_index++] = ft_atol(argv[i], stack);
 	}
 }

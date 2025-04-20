@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_fon1.c                                          :+:      :+:    :+:   */
+/*   operations.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 12:57:28 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/20 14:58:21 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/20 18:26:18 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	sa(t_stack *stack)
 	int	argc;
 	int	b;
 
-	write(1, "sa\n", 3);
+	ft_printf("%s", "sa\n");
 	argc = 0;
 	while (stack->stack_a[argc])
 		argc++;
@@ -34,7 +34,7 @@ void	sb(t_stack *stack)
 	int	argc;
 	int	b;
 
-	write(1, "sb\n", 3);
+	ft_printf("%s", "sb\n");
 	argc = 0;
 	while (stack->stack_a[argc])
 		argc++;
@@ -46,7 +46,7 @@ void	sb(t_stack *stack)
 	}
 }
 
-int	pb(int *stack_a, int *stack_b,	t_stack *stack)
+int	pb(int *stack_a, int *stack_b, t_stack *stack)
 {
 	int	i;
 	int	lena;
@@ -54,7 +54,7 @@ int	pb(int *stack_a, int *stack_b,	t_stack *stack)
 
 	stack->size_stack_a -= 1;
 	stack->size_stack_b += 1;
-	write(1, "pb\n", 3);
+	ft_printf("%s", "pb\n");
 	i = 0;
 	lenb = 0;
 	lena = 0;
@@ -69,7 +69,7 @@ int	pb(int *stack_a, int *stack_b,	t_stack *stack)
 	if (lenb == 0)
 		swap_for_p(stack_a, stack_b, lena);
 	else
-		edit_b_for_pb(stack_a, stack_b, lenb, lena);
+		update_stack_b_for_push(stack_a, stack_b, lenb, lena);
 	return (1);
 }
 
@@ -82,7 +82,7 @@ void	swap_for_p(int *stack_a, int *stack_b, int lena)
 	while (stack_a[i + 1])
 	{
 		stack_a[i] = stack_a[i + 1];
-		if (i == lena -1)
+		if (i == lena - 1)
 			break ;
 		i++;
 	}
@@ -95,7 +95,7 @@ int	pa(int *stack_a, int *stack_b, t_stack *stack)
 	int	lena;
 	int	lenb;
 
-	write(1, "pa\n", 3);
+	ft_printf("%s", "pa\n");
 	stack->size_stack_a += 1;
 	stack->size_stack_b -= 1;
 	i = 0;
@@ -112,6 +112,6 @@ int	pa(int *stack_a, int *stack_b, t_stack *stack)
 	if (lenb == 0)
 		swap_for_p(stack_a, stack_b, lena);
 	else
-		edit_b_for_pb(stack_a, stack_b, lenb, lena);
+		update_stack_b_for_push(stack_a, stack_b, lenb, lena);
 	return (1);
 }

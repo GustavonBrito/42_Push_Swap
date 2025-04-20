@@ -6,7 +6,7 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 12:57:33 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/20 14:58:32 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/20 18:13:21 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ra(t_stack *stack)
 	int	first_number;
 	int	len_b;
 
-	write(1, "ra\n", 3);
+	ft_printf("%s", "ra\n");
 	i = 0;
 	len_b = 0;
 	first_number = stack->stack_a[0];
@@ -32,7 +32,7 @@ void	ra(t_stack *stack)
 	stack->stack_a[i -1] = first_number;
 }
 
-void	short_three(t_stack *stack)
+void	sort_three(t_stack *stack)
 {
 	int	max;
 	int	med;
@@ -51,7 +51,7 @@ void	short_three(t_stack *stack)
 		ra(stack);
 }
 
-void	short_four(t_stack *stack)
+void	sort_four(t_stack *stack)
 {
 	int	i;
 	int	size;
@@ -74,7 +74,7 @@ void	short_four(t_stack *stack)
 	pa(stack->stack_b, stack->stack_a, stack);
 }
 
-void	short_five(t_stack *stack)
+void	sort_five(t_stack *stack)
 {
 	int	i;
 	int	size;
@@ -90,7 +90,7 @@ void	short_five(t_stack *stack)
 		i++;
 	}
 	if (!is_sorted(stack->stack_a, stack->size_stack_a))
-		short_three(stack);
+		sort_three(stack);
 	if (is_sorted(stack->stack_b, stack->size_stack_b))
 		sb(stack);
 	pa(stack->stack_b, stack->stack_a, stack);
