@@ -1,36 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/19 01:28:42 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/20 00:50:43 by gserafio         ###   ########.fr       */
+/*   Created: 2024/10/14 05:22:41 by marvin            #+#    #+#             */
+/*   Updated: 2024/11/07 22:28:04 by gserafio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include <stdlib.h>
-
-int main(int argc, char **argv)
+int	ft_isalnum(int c)
 {
-	t_stack_node *a;
-	t_stack_node *b;
-
-	a = NULL;
-	b = NULL;
-	if (argc == 1 || (argc == 2 && !argv[1][0]))
-		return (0);
-	else if (argc == 2)
-		argv = ft_split(argv[1], ' ');
-	// if (!parse_args(argv + 1, &a))
-	// {
-	// 	write(2, "Error\n", 6);
-	// 	return (1);
-	// }
-	// if (!is_sorted(a))
-	// 	sort_stack(&a, &b);
-	// free_stack(&a);
+	if (c >= 65 && c <= 90)
+		return (1);
+	if (c >= 48 && c <= 57)
+		return (4);
+	if (c >= 97 && c <= 122)
+		return (2);
 	return (0);
 }

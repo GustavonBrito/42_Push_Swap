@@ -1,23 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   init_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
+/*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/19 01:29:37 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/19 01:31:49 by gustavo-lin      ###   ########.fr       */
+/*   Created: 2025/04/19 21:58:40 by gserafio          #+#    #+#             */
+/*   Updated: 2025/04/19 21:58:52 by gserafio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
+#include "push_swap.h"
 
-	typedef struct s_list{
-		
-		int		actual_value;
-		t_list	*next;
-		t_list	*prev;
-	}	t_list;
-
-#endif

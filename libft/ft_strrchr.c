@@ -1,36 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/19 01:28:42 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/20 00:50:43 by gserafio         ###   ########.fr       */
+/*   Created: 2025/04/17 12:35:02 by gserafio          #+#    #+#             */
+/*   Updated: 2025/04/17 12:35:04 by gserafio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include <stdlib.h>
+#include "headers/libft.h"
 
-int main(int argc, char **argv)
+char	*ft_strrchr(char *s, int c)
 {
-	t_stack_node *a;
-	t_stack_node *b;
+	int	i;
+	int	flag;
 
-	a = NULL;
-	b = NULL;
-	if (argc == 1 || (argc == 2 && !argv[1][0]))
-		return (0);
-	else if (argc == 2)
-		argv = ft_split(argv[1], ' ');
-	// if (!parse_args(argv + 1, &a))
-	// {
-	// 	write(2, "Error\n", 6);
-	// 	return (1);
-	// }
-	// if (!is_sorted(a))
-	// 	sort_stack(&a, &b);
-	// free_stack(&a);
+	i = 0;
+	flag = 0;
+	if (c > 255)
+		c = c % 256;
+	while (s[i])
+	{
+		if (ft_isascii(s[i]) == 0)
+			return (0);
+		if (s[i] == c)
+		{
+			s = &s[i];
+			i = 0;
+			flag = 1;
+		}
+		i++;
+	}
+	if (flag == 1)
+		return (s);
+	if (c == 0)
+		return (s = &s[i]);
 	return (0);
 }

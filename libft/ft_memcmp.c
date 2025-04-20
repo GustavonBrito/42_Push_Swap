@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/19 01:28:42 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/20 00:50:43 by gserafio         ###   ########.fr       */
+/*   Created: 2025/04/17 12:32:53 by gserafio          #+#    #+#             */
+/*   Updated: 2025/04/17 12:32:55 by gserafio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include <stdlib.h>
+#include "headers/libft.h"
 
-int main(int argc, char **argv)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	t_stack_node *a;
-	t_stack_node *b;
+	const unsigned char	*s1_converted;
+	const unsigned char	*s2_converted;
+	unsigned int		i;
 
-	a = NULL;
-	b = NULL;
-	if (argc == 1 || (argc == 2 && !argv[1][0]))
+	i = 0;
+	s1_converted = (const unsigned char *)s1;
+	s2_converted = (const unsigned char *)s2;
+	if (n == 0)
 		return (0);
-	else if (argc == 2)
-		argv = ft_split(argv[1], ' ');
-	// if (!parse_args(argv + 1, &a))
-	// {
-	// 	write(2, "Error\n", 6);
-	// 	return (1);
-	// }
-	// if (!is_sorted(a))
-	// 	sort_stack(&a, &b);
-	// free_stack(&a);
+	while (i < n)
+	{
+		if (s1_converted[i] != s2_converted[i])
+			return ((const unsigned int)(s1_converted[i] - s2_converted[i]));
+		i++;
+	}
 	return (0);
 }

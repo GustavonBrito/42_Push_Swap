@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/19 01:28:42 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/20 00:50:43 by gserafio         ###   ########.fr       */
+/*   Created: 2025/04/17 12:32:48 by gserafio          #+#    #+#             */
+/*   Updated: 2025/04/17 12:32:50 by gserafio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include <stdlib.h>
+#include "headers/libft.h"
 
-int main(int argc, char **argv)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	t_stack_node *a;
-	t_stack_node *b;
+	const unsigned char	*s_converted;
+	unsigned char		c_converted;
+	unsigned int		i;
 
-	a = NULL;
-	b = NULL;
-	if (argc == 1 || (argc == 2 && !argv[1][0]))
-		return (0);
-	else if (argc == 2)
-		argv = ft_split(argv[1], ' ');
-	// if (!parse_args(argv + 1, &a))
-	// {
-	// 	write(2, "Error\n", 6);
-	// 	return (1);
-	// }
-	// if (!is_sorted(a))
-	// 	sort_stack(&a, &b);
-	// free_stack(&a);
+	i = 0;
+	s_converted = (const unsigned char *)s;
+	c_converted = (unsigned char)c;
+	while (i < n)
+	{
+		if (s_converted[i] == c_converted)
+			return ((unsigned char *)(s_converted = &s_converted[i]));
+		i++;
+	}
 	return (0);
 }
