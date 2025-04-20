@@ -1,40 +1,37 @@
-CC = cc
-
-LIBFT_DIR = libft
-LIBFT_LIB = $(LIBFT_DIR)/libftprintf.a
-
-HEADER = -I $(LIBFT_DIR)
-
 NAME = push_swap
+CC = gcc
+FLAGS = -Wall -Wextra -Werror
 
-SRCS =	main.c
-
-OBJS =	$(SRCS:%.c=$(OBJ_DIR)/%.o)
+SRCS = main.c  \
+       ps_fon1.c \
+       ps_fon2.c \
+       utils1.c \
+       utils.c \
+       checks.c\
+       short_sort.c \
+       radix.c \
+       init.c 
 
 OBJ_DIR = build
+OBJS =	$(SRCS:%.c=$(OBJ_DIR)/%.o)
 
-CFLAGS = -Werror -Wall -Wextra
+all: $(NAME)
 
-all: $(LIBFT) $(NAME)
+$(OBJ_DIR):
+	@mkdir -p $(OBJ_DIR)
+
+$(OBJ_DIR)/%.o: %.c | $(OBJ_DIR)
+	@$(CC) $(FLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)
-	@make -C $(LIBFT_DIR)
-	$(CC) $(CFLAGS) $(OBJS) $(LIBFT_LIB) $(LDFLAGS) -o $@
-
-$(OBJ_DIR)/%.o: %.c
-	@mkdir -p $(dir $@)
-	$(CC) $(CFLAGS) $(HEADER) -c $< -o $@
+	@$(CC) $(FLAGS) -o $(NAME) $(OBJS)
 
 clean:
-	@make -C $(LIBFT_DIR) clean
-	rm -f $(OBJS)
+	@$(RM) $(OBJS)
 
-fclean:
-	@make -C $(LIBFT_DIR) fclean
-	rm -f $(OBJS) $(NAME)
+fclean: clean
+	@$(RM) $(NAME)
 
-re:
-	@$(MAKE) fclean
-	@$(MAKE) all
+re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: fclean re clean all

@@ -3,34 +3,60 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/19 01:28:42 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/20 00:50:43 by gserafio         ###   ########.fr       */
+/*   Created: 2025/04/20 12:57:23 by gustavo-lin       #+#    #+#             */
+/*   Updated: 2025/04/20 15:21:23 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdlib.h>
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	t_stack_node *a;
-	t_stack_node *b;
+	t_stack	*stack;
 
-	a = NULL;
-	b = NULL;
-	if (argc == 1 || (argc == 2 && !argv[1][0]))
+	stack = malloc(sizeof(t_stack));
+	if (!stack)
 		return (0);
-	else if (argc == 2)
-		argv = ft_split(argv[1], ' ');
-	// if (!parse_args(argv + 1, &a))
-	// {
-	// 	write(2, "Error\n", 6);
-	// 	return (1);
-	// }
-	// if (!is_sorted(a))
-	// 	sort_stack(&a, &b);
-	// free_stack(&a);
-	return (0);
+	if (argc < 1)
+	{
+		ft_printf("%s", "Error\n");
+		return (-1);
+	}
+	if (!init_stack_data(stack, argv))
+	{
+		write(2, "Error\n", 7);
+		return (-1);
+	}
+	if (!is_sorted(stack->stack_a, stack->size_stacks))
+	{
+		if (stack->size_stacks <= 5)
+			short_sort(stack);
+		else
+			radix_sort(stack);
+	}
+	return (free(stack->stack_b), free(stack->stack_a), free(stack), 0);
+}
+
+void	ft_double_sign(char **argv, t_stack *stack)
+{
+	int	i;
+	int	j;
+
+	i = 1;
+	while (argv[i])
+	{
+		j = 0;
+		while (argv[i][j])
+		{
+			if ((argv[i][j] == '-' && argv[i][j + 1] == '-')
+				|| (argv[i][j] == '+' && argv[i][j + 1] == '+'))
+			{
+				stack->error_state = 1;
+			}
+			j++;
+		}
+		i++;
+	}
 }
