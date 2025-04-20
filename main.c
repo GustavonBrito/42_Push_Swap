@@ -6,7 +6,7 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 12:57:23 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/20 18:08:16 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/20 19:25:59 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,24 +39,3 @@ int	main(int argc, char **argv)
 	return (free(stack->stack_b), free(stack->stack_a), free(stack), 0);
 }
 
-void	ft_double_sign(char **argv, t_stack *stack)
-{
-	int	i;
-	int	j;
-
-	i = 1;
-	while (argv[i])
-	{
-		j = 0;
-		while (argv[i][j])
-		{
-			if ((argv[i][j] == '-' && argv[i][j + 1] == '-')
-				|| (argv[i][j] == '+' && argv[i][j + 1] == '+'))
-			{
-				stack->error_state = 1;
-			}
-			j++;
-		}
-		i++;
-	}
-}

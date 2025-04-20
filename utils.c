@@ -6,7 +6,7 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 12:57:47 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/20 18:11:48 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/20 19:22:34 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,27 @@ void	ft_bzero_utils(t_stack *stack, size_t n)
 	{
 		*p++ = 0;
 		--n;
+	}
+}
+
+void	ft_double_sign(char **argv, t_stack *stack)
+{
+	int	i;
+	int	j;
+
+	i = 1;
+	while (argv[i])
+	{
+		j = 0;
+		while (argv[i][j])
+		{
+			if ((argv[i][j] == '-' && argv[i][j + 1] == '-')
+				|| (argv[i][j] == '+' && argv[i][j + 1] == '+'))
+			{
+				stack->error_state = 1;
+			}
+			j++;
+		}
+		i++;
 	}
 }

@@ -1,5 +1,7 @@
 NAME = push_swap
-CC = gcc
+
+CC = cc
+
 FLAGS = -Wall -Wextra -Werror
 
 LIBFT_DIR = libft
@@ -16,7 +18,7 @@ SRCS = main.c  \
        init_validation.c\
        short_sort.c \
        radix.c \
-       init.c 
+       stack_init.c
 
 OBJ_DIR = build
 
