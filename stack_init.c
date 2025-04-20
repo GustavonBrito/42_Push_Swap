@@ -6,7 +6,7 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 18:36:21 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/20 18:36:23 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/20 19:39:00 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,10 @@ int	is_space_present(char *arguman)
 int	load_stack_from_input(t_stack *stack, char **argv)
 {
 	stack->size_stacks = count_argv_elements(argv);
-	stack->stack_a = ft_calloc(stack->size_stacks + 1, sizeof(int));
+	stack->stack_a = ft_calloc_utils(stack->size_stacks + 1, sizeof(int));
 	if (!stack->stack_a)
 		return (0);
-	stack->stack_b = ft_calloc(stack->size_stacks + 1, sizeof(int));
+	stack->stack_b = ft_calloc_utils(stack->size_stacks + 1, sizeof(int));
 	if (!stack->stack_b)
 	{
 		free(stack->stack_a);

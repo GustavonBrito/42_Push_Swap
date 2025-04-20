@@ -6,7 +6,7 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 12:57:47 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/20 19:22:34 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/20 19:38:23 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,4 +95,23 @@ void	ft_double_sign(char **argv, t_stack *stack)
 		}
 		i++;
 	}
+}
+
+void	*ft_calloc_utils(size_t count, size_t size)
+{
+	char			*destiny;
+	unsigned int	total;
+	unsigned int	i;
+
+	total = count * size;
+	destiny = (char *)malloc(sizeof(char) * total);
+	if (!destiny)
+		return (NULL);
+	i = 0;
+	while (total--)
+	{
+		destiny[i] = 0;
+		i++;
+	}
+	return ((void *)destiny);
 }

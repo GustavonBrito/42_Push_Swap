@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checks.c                                           :+:      :+:    :+:   */
+/*   init_validation.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 12:58:41 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/20 16:26:42 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/20 19:35:32 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,12 +54,11 @@ void	ft_chracter_check(char **argv, t_stack *stack)
 		{
 			if (argv[i][j] >= '0' && argv[i][j] <= '9')
 				continue ;
-			else if (argv[i][j] == '-' || argv[i][j] == '+' || argv[i][j] == 32
-				|| argv[i][j] == '\t')
+			else if (argv[i][j] == '-' || argv[i][j] == '+' || argv[i][j] == 32)
 			{
 				if (((argv[i][j + 1] >= '0' && argv[i][j + 1] <= '9')
 						&& !(argv[i][j - 1] >= '0' && argv[i][j - 1] <= '9'))
-					|| (argv[i][j] == 32) || argv[i][j] == '\t')
+					|| (argv[i][j] == 32))
 					continue ;
 				else
 					stack->error_state = 1;

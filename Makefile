@@ -46,6 +46,7 @@ clean:
 
 fclean: clean
 	@$(RM) $(NAME) 
+	@$(RM) $(LIBFT)
 
 re: fclean all
 
