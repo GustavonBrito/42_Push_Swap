@@ -6,7 +6,7 @@
 /*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 10:49:22 by gserafio          #+#    #+#             */
-/*   Updated: 2025/04/21 13:53:58 by gserafio         ###   ########.fr       */
+/*   Updated: 2025/04/21 14:08:56 by gserafio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ int	main(int argc, char **argv)
 {
 	t_stack	*stack;
 
+	if (argc == 1)
+		return (0);
 	stack = (t_stack *)malloc(sizeof(t_stack));
 	if (!stack)
-		return (0);
-	if (argc == 1)
 		return (0);
 	if (!load_stack_from_input(stack, argv))
 	{
