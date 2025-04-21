@@ -6,7 +6,7 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 12:58:35 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/20 20:30:46 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/20 22:33:30 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ int		load_stack_from_input(t_stack *stack, char **argv);
 char	**ft_split(char const *s, char c);
 char	**ft_wordput(const char *s, char c, char **strs);
 int		ft_wordcount(const char *s, char c);
-int		is_space_present(char *arguman);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 void	init_space_arg(t_stack *stack, char **argv);
 size_t	ft_atol(char *str, t_stack *stack);
@@ -54,10 +53,8 @@ void	sort_four(t_stack *stack);
 void	sort_five(t_stack *stack);
 void	swap_for_p(int *stack_a, int *stack_b, int lena);
 int		check_doubles(t_stack *stack);
-size_t	ft_strlen(const char *s);
 void	ft_double_sign(char **argv, t_stack *stack);
 void	ft_free_split(char **temp);
 void	ft_chracter_check(char **argv, t_stack *stack);
-void	*ft_calloc_utils(size_t count, size_t size);
 
 #endif

@@ -15,7 +15,7 @@ SRCS = main.c  \
        sort_algorithms.c \
        utils1.c \
        utils.c \
-       init_validation.c\
+       validations.c\
        short_sort.c \
        radix.c \
        stack_init.c

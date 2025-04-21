@@ -6,7 +6,7 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 18:36:21 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/20 21:36:32 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/20 22:00:56 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,34 +32,6 @@ int	count_argv_elements(char **argv)
     }
 	return (count);
 }
-
-// int	count_argv_elements(char **argv)
-// {
-// 	int		i;
-// 	int		j;
-// 	int		count;
-// 	char	**temp;
-
-// 	i = 0;
-// 	count = 0;
-// 	while (argv[++i])
-// 	{
-// 		if (is_space_present(argv[i]))
-// 		{
-// 			temp = ft_split(argv[i], 32);
-// 			j = -1;
-// 			while (temp[++j])
-// 			{
-// 				count++;
-// 			}
-// 			ft_free_split(temp);
-// 		}
-// 		else
-// 			count++;
-// 	}
-// 	i = 0;
-// 	return (count);
-// }
 
 int	is_space_present(char *argv)
 {

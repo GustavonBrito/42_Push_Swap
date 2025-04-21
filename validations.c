@@ -6,7 +6,7 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 12:58:41 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/20 21:14:01 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/20 22:06:53 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,27 @@ void	ft_chracter_check(char **argv, t_stack *stack)
 			else
 				stack->error_state = 1;
 		}
+	}
+}
+
+void	ft_double_sign(char **argv, t_stack *stack)
+{
+	int	i;
+	int	j;
+
+	i = 1;
+	while (argv[i])
+	{
+		j = 0;
+		while (argv[i][j])
+		{
+			if ((argv[i][j] == '-' && argv[i][j + 1] == '-')
+				|| (argv[i][j] == '+' && argv[i][j + 1] == '+'))
+			{
+				stack->error_state = 1;
+			}
+			j++;
+		}
+		i++;
 	}
 }
