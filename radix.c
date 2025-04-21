@@ -6,7 +6,7 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 12:57:38 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/21 07:52:35 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/21 08:01:17 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,12 +59,12 @@ void	radix_sort(t_stack *stack)
 			j++;
 		}
 		i++;
-		while (!is_empty(stack))
+		while (!is_stack_b_empty(stack))
 			pa(stack->stack_b, stack->stack_a, stack);
 	}
 }
 
-int	is_empty(t_stack *stack)
+int	is_stack_b_empty(t_stack *stack)
 {
 	int	i;
 

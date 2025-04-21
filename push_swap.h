@@ -6,7 +6,7 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 12:58:35 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/21 07:52:06 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/21 08:01:17 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	bubble_sort(t_stack *stack, int n);
 void	ft_bzero_utils(t_stack *stack, size_t n);
 void	radix_sort(t_stack *stack);
 int		get_max_bits(t_stack *stack);
-int		is_empty(t_stack *stack);
+int		is_stack_b_empty(t_stack *stack);
 int		is_sorted(int *stack, int size);
 void	short_sort(t_stack *stack);
 void	sort_three(t_stack *stack);
