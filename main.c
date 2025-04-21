@@ -6,7 +6,7 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 12:57:23 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/20 19:54:23 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/20 21:00:50 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	main(int argc, char **argv)
 {
 	t_stack	*stack;
 
-	stack = malloc(sizeof(t_stack));
+	stack = (t_stack *)malloc(sizeof(t_stack));
 	if (!stack)
 		return (0);
 	if (argc < 1)

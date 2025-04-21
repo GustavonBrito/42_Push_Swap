@@ -6,7 +6,7 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 12:58:35 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/20 19:38:38 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/20 20:30:46 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	swap_for_p(int *stack_a, int *stack_b, int lena);
 int		check_doubles(t_stack *stack);
 size_t	ft_strlen(const char *s);
 void	ft_double_sign(char **argv, t_stack *stack);
-void	ft_free_temp(char **temp);
+void	ft_free_split(char **temp);
 void	ft_chracter_check(char **argv, t_stack *stack);
 void	*ft_calloc_utils(size_t count, size_t size);
 

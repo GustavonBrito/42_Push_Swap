@@ -6,7 +6,7 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 12:58:41 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/20 19:35:32 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/20 21:14:01 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	check_doubles(t_stack *stack)
 	return (0);
 }
 
-void	ft_free_temp(char **temp)
+void	ft_free_split(char **temp)
 {
 	int	i;
 
@@ -54,11 +54,11 @@ void	ft_chracter_check(char **argv, t_stack *stack)
 		{
 			if (argv[i][j] >= '0' && argv[i][j] <= '9')
 				continue ;
-			else if (argv[i][j] == '-' || argv[i][j] == '+' || argv[i][j] == 32)
+			else if (argv[i][j] == '-' || argv[i][j] == '+' || argv[i][j] == 32 || argv[i][j] == '\t')
 			{
 				if (((argv[i][j + 1] >= '0' && argv[i][j + 1] <= '9')
 						&& !(argv[i][j - 1] >= '0' && argv[i][j - 1] <= '9'))
-					|| (argv[i][j] == 32))
+					|| (argv[i][j] == 32) || argv[i][j] == '\t')
 					continue ;
 				else
 					stack->error_state = 1;

@@ -6,48 +6,69 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 18:36:21 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/20 19:39:00 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/20 21:36:32 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+
 int	count_argv_elements(char **argv)
 {
-	int		i;
-	int		j;
-	int		count;
-	char	**temp;
+    int		i;
+    int		j;
+    int		count;
+    char	**temp;
 
-	i = 0;
-	count = 0;
-	while (argv[++i])
-	{
-		if (is_space_present(argv[i]))
-		{
-			temp = ft_split(argv[i], 32);
-			j = -1;
-			while (temp[++j])
-			{
-				count++;
-			}
-			ft_free_temp(temp);
-		}
-		else
-			count++;
-	}
-	i = 0;
+    i = 0;
+    count = 0;
+    while (argv[++i])
+    {
+		temp = ft_split(argv[i], 32);
+        j = -1;
+		while (temp[++j])
+            count++;
+        ft_free_split(temp);
+    }
 	return (count);
 }
 
-int	is_space_present(char *arguman)
+// int	count_argv_elements(char **argv)
+// {
+// 	int		i;
+// 	int		j;
+// 	int		count;
+// 	char	**temp;
+
+// 	i = 0;
+// 	count = 0;
+// 	while (argv[++i])
+// 	{
+// 		if (is_space_present(argv[i]))
+// 		{
+// 			temp = ft_split(argv[i], 32);
+// 			j = -1;
+// 			while (temp[++j])
+// 			{
+// 				count++;
+// 			}
+// 			ft_free_split(temp);
+// 		}
+// 		else
+// 			count++;
+// 	}
+// 	i = 0;
+// 	return (count);
+// }
+
+int	is_space_present(char *argv)
 {
 	int	i;
 
 	i = -1;
-	while (arguman[++i])
+	while (argv[++i])
 	{
-		if (arguman[i] == 32)
+		if (argv[i] == 32)
 			return (1);
 	}
 	return (0);
@@ -55,11 +76,13 @@ int	is_space_present(char *arguman)
 
 int	load_stack_from_input(t_stack *stack, char **argv)
 {
+	int valid_args_passed = 0;
 	stack->size_stacks = count_argv_elements(argv);
-	stack->stack_a = ft_calloc_utils(stack->size_stacks + 1, sizeof(int));
+	valid_args_passed = stack->size_stacks;
+	stack->stack_a = (int *)ft_calloc(valid_args_passed + 1, sizeof(int));
 	if (!stack->stack_a)
 		return (0);
-	stack->stack_b = ft_calloc_utils(stack->size_stacks + 1, sizeof(int));
+	stack->stack_b = (int *)ft_calloc(valid_args_passed + 1, sizeof(int));
 	if (!stack->stack_b)
 	{
 		free(stack->stack_a);
@@ -129,7 +152,7 @@ void	init_space_arg(t_stack *stack, char **argv)
 				stack->stack_a[stack_index] = ft_atol(temp[j], stack);
 				stack_index++;
 			}
-			ft_free_temp(temp);
+			ft_free_split(temp);
 		}
 		else
 			stack->stack_a[stack_index++] = ft_atol(argv[i], stack);
