@@ -6,7 +6,7 @@
 /*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 10:49:22 by gserafio          #+#    #+#             */
-/*   Updated: 2025/04/21 13:48:20 by gserafio         ###   ########.fr       */
+/*   Updated: 2025/04/21 13:53:58 by gserafio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main(int argc, char **argv)
 		return (0);
 	if (!load_stack_from_input(stack, argv))
 	{
-		write(2, "Error\n", 7);
+		write(2, "Error\n", 6);
 		return (-1);
 	}
 	if (!is_sorted(stack->stack_a, stack->size_stacks))
