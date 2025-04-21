@@ -17,9 +17,8 @@ LIBFT_SRCS = \
 	ft_printf/ft_to_hex_printf.c ft_printf/ft_unsigned_printf.c
 
 PRINTF_SRCS = ft_printf/ft_printf.c
-GNL_SRC = gnl/get_next_line.c gnl/get_next_line_utils.c
 
-SRCS = $(LIBFT_SRCS) $(PRINTF_SRCS) $(GNL_SRC)
+SRCS = $(LIBFT_SRCS) $(PRINTF_SRCS)
 OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.c=.o))
 
 # ------------------------ REGRAS ------------------------
