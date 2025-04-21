@@ -6,7 +6,7 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 12:57:28 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/20 18:26:18 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/21 08:27:59 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,22 +73,6 @@ int	pb(int *stack_a, int *stack_b, t_stack *stack)
 	return (1);
 }
 
-void	swap_for_p(int *stack_a, int *stack_b, int lena)
-{
-	int	i;
-
-	i = 0;
-	stack_b[0] = stack_a[0];
-	while (stack_a[i + 1])
-	{
-		stack_a[i] = stack_a[i + 1];
-		if (i == lena - 1)
-			break ;
-		i++;
-	}
-	stack_a[i] = 0;
-}
-
 int	pa(int *stack_a, int *stack_b, t_stack *stack)
 {
 	int	i;
@@ -114,4 +98,20 @@ int	pa(int *stack_a, int *stack_b, t_stack *stack)
 	else
 		update_stack_b_for_push(stack_a, stack_b, lenb, lena);
 	return (1);
+}
+
+void	swap_for_p(int *stack_a, int *stack_b, int lena)
+{
+	int	i;
+
+	i = 0;
+	stack_b[0] = stack_a[0];
+	while (stack_a[i + 1])
+	{
+		stack_a[i] = stack_a[i + 1];
+		if (i == lena - 1)
+			break ;
+		i++;
+	}
+	stack_a[i] = 0;
 }
