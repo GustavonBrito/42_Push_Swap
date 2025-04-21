@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validations.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
+/*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/20 12:58:41 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/21 07:27:39 by gustavo-lin      ###   ########.fr       */
+/*   Created: 2025/04/21 10:50:18 by gserafio          #+#    #+#             */
+/*   Updated: 2025/04/21 10:50:20 by gserafio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

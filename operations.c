@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   operations.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
+/*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/20 12:57:28 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/21 08:27:59 by gustavo-lin      ###   ########.fr       */
+/*   Created: 2025/04/21 10:49:30 by gserafio          #+#    #+#             */
+/*   Updated: 2025/04/21 11:29:18 by gserafio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

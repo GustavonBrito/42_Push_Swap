@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
+/*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/20 18:36:21 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/21 08:15:46 by gustavo-lin      ###   ########.fr       */
+/*   Created: 2025/04/21 10:50:01 by gserafio          #+#    #+#             */
+/*   Updated: 2025/04/21 10:50:03 by gserafio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

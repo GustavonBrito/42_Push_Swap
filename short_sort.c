@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   short_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
+/*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/20 12:57:42 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/20 18:13:21 by gustavo-lin      ###   ########.fr       */
+/*   Created: 2025/04/21 10:49:49 by gserafio          #+#    #+#             */
+/*   Updated: 2025/04/21 11:27:48 by gserafio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

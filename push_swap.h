@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
+/*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/20 12:58:35 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/21 08:01:17 by gustavo-lin      ###   ########.fr       */
+/*   Created: 2025/04/21 10:49:37 by gserafio          #+#    #+#             */
+/*   Updated: 2025/04/21 11:31:04 by gserafio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
