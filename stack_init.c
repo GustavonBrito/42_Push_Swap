@@ -6,30 +6,29 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 18:36:21 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/20 22:00:56 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/21 07:52:06 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
 int	count_argv_elements(char **argv)
 {
-    int		i;
-    int		j;
-    int		count;
-    char	**temp;
+	int		i;
+	int		j;
+	int		count;
+	char	**temp;
 
-    i = 0;
-    count = 0;
-    while (argv[++i])
-    {
+	i = 0;
+	count = 0;
+	while (argv[++i])
+	{
 		temp = ft_split(argv[i], 32);
-        j = -1;
+		j = -1;
 		while (temp[++j])
-            count++;
-        ft_free_split(temp);
-    }
+			count++;
+		ft_free_split(temp);
+	}
 	return (count);
 }
 
@@ -48,7 +47,8 @@ int	is_space_present(char *argv)
 
 int	load_stack_from_input(t_stack *stack, char **argv)
 {
-	int valid_args_passed = 0;
+	int	valid_args_passed;
+
 	stack->size_stacks = count_argv_elements(argv);
 	valid_args_passed = stack->size_stacks;
 	stack->stack_a = (int *)ft_calloc(valid_args_passed + 1, sizeof(int));
@@ -63,7 +63,7 @@ int	load_stack_from_input(t_stack *stack, char **argv)
 	stack->error_state = 0;
 	stack->size_stack_a = stack->size_stacks;
 	stack->size_stack_b = 0;
-	init_space_arg(stack, argv);
+	initialize_stack_from_args(stack, argv);
 	ft_double_sign(argv, stack);
 	ft_chracter_check(argv, stack);
 	if (stack->error_state == 1)
@@ -102,7 +102,7 @@ void	initialize_stack_index(t_stack *stack)
 	ft_bzero_utils(stack, stack->size_stacks);
 }
 
-void	init_space_arg(t_stack *stack, char **argv)
+void	initialize_stack_from_args(t_stack *stack, char **argv)
 {
 	int		i;
 	int		j;

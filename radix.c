@@ -6,7 +6,7 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 12:57:38 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/20 13:57:53 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/21 07:52:35 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	get_max_bits(t_stack *stack)
 	int	i;
 
 	i = 0;
-	max_value = stack->stack_a[0];
+	max_value = 0;
 	while (i < stack->size_stacks)
 	{
 		if (stack->stack_a[i] > max_value)

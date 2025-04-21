@@ -6,7 +6,7 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 12:58:35 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/20 22:33:30 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/21 07:52:06 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	**ft_split(char const *s, char c);
 char	**ft_wordput(const char *s, char c, char **strs);
 int		ft_wordcount(const char *s, char c);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
-void	init_space_arg(t_stack *stack, char **argv);
+void	initialize_stack_from_args(t_stack *stack, char **argv);
 size_t	ft_atol(char *str, t_stack *stack);
 void	initialize_stack_index(t_stack *stack);
 void	update_stack_b_for_push(int *stack_a, int *stack_b, int lenb, int lena);

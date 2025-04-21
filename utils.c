@@ -6,7 +6,7 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 12:57:47 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/04/20 22:06:47 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/04/21 07:27:47 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,5 +74,3 @@ void	ft_bzero_utils(t_stack *stack, size_t n)
 		--n;
 	}
 }
-
-
