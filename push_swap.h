@@ -6,7 +6,7 @@
 /*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 10:49:37 by gserafio          #+#    #+#             */
-/*   Updated: 2025/04/21 11:31:04 by gserafio         ###   ########.fr       */
+/*   Updated: 2025/04/21 13:28:56 by gserafio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ void	swap_for_p(int *stack_a, int *stack_b, int lena);
 int		check_doubles(t_stack *stack);
 void	ft_double_sign(char **argv, t_stack *stack);
 void	ft_free_split(char **temp);
+void	ft_chracter_check(char **argv, t_stack *stack);
 void	ft_chracter_check(char **argv, t_stack *stack);
 
 #endif
